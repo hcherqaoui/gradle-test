@@ -1,7 +1,7 @@
 pipeline{
     agent any
     tools {
-        gradle
+        gradle gradle
     }
     stages {
         stage("bluid"){
