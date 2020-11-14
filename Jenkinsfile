@@ -7,7 +7,7 @@ pipeline{
         stage("bluid"){
         steps {
             echo 'Building application ...'
-            sh "gradle bootJar"
+            sh "./gradlew test"
         }
         }
     }
