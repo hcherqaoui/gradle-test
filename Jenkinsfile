@@ -11,5 +11,17 @@ pipeline {
                     sh "./gradlew test"
                }
           }
+          stage("Package") {
+               steps {
+                    sh "./gradlew build"
+               }
+          }
+
+          stage("Docker build") {
+               steps {
+                    sh "docker build -t opium00/image-de-habib ."
+               }
+          }
+
      }
 }
