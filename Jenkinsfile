@@ -1,12 +1,15 @@
-pipeline{
-    agent any
-
-    stages {
-        stage("bluid"){
-        steps {
-            echo 'Building application ...'
-            sh "./gradlew clean test bootJar"
-        }
-        }
-    }
+pipeline {
+     agent any
+     stages {
+          stage("Compile") {
+               steps {
+                    sh "./gradlew compileJava"
+               }
+          }
+          stage("Unit test") {
+               steps {
+                    sh "./gradlew test"
+               }
+          }
+     }
 }
